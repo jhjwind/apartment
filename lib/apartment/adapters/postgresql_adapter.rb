@@ -133,6 +133,7 @@ module Apartment
       #
       def clone_pg_schema
         pg_schema_sql = patch_search_path(pg_dump_schema)
+        puts "[APARTMENT LOGS]:\n #{pg_schema_sql}"
         Apartment.connection.execute(pg_schema_sql)
       end
 
@@ -140,6 +141,7 @@ module Apartment
       #
       def copy_schema_migrations
         pg_migrations_data = patch_search_path(pg_dump_schema_migrations_data)
+        puts "[APARTMENT LOGS]:\n #{pg_migrations_data}"
         Apartment.connection.execute(pg_migrations_data)
       end
 
