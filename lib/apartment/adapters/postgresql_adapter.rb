@@ -120,7 +120,7 @@ module Apartment
       PSQL_DUMP_BLACKLISTED_STATEMENTS= [
         /SET search_path/i,   # overridden later
         /SET lock_timeout/i,   # new in postgresql 9.3
-        /OPERATOR FAMILY/i
+        /CREATE OPERATOR FAMILY/i
       ]
 
       def import_database_schema
